@@ -1,14 +1,144 @@
-/* App.css */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
+/* Reset some default styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* App container styles */
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #413B39;
+  color: #FFF9E8;
+  min-height: 100vh;
+}
+
+/* Header styles */
+.header {
+  background-color: #FF4545;
+  color: white;
+  padding: 10px;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+}
+
+.header li {
+  margin-right: 20px;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Left sidebar styles */
+.left-sidebar {
+  padding: 20px;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.profile-info h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+/* Right sidebar styles */
+.right-sidebar {
+  padding: 20px;
+}
+
+.search input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  background-color: #68605F;
+  color: #FFF9E8;
+  font-size: 14px;
+  outline: none;
+}
+
+.trending {
+  margin-top: 20px;
+}
+
+.trending h2 {
+  font-size: 18px;
+}
+
+.trending ul {
+  list-style: none;
   padding: 0;
 }
 
-.App {
-  display: flex;
-  justify-content: center;
+.trending li {
+  margin: 5px 0;
+  font-size: 14px;
 }
 
-/* Add more styles for the left, middle, and right sections. */
+/* Main content styles */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Tweet box styles */
+.tweet-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tweet-box .profile-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+textarea {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+button {
+  background-color: #FF4545;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Tweets styles */
+h2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Style your TweetCard component as needed */

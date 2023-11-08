@@ -1,0 +1,29 @@
+/* PostCard styles */
+.Post-card {
+    display: flex;
+    border: 0.5px solid #FFF9E8;
+    padding: 12px;
+    margin: 12px;
+    background-color: #413B39;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .Post-content {
+    flex: 1;
+  }
+  
+  .name {
+    font-weight: bold;
+  }
+  
+  .Post-text {
+    margin-top: 4px;
+  }
+  
