@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
-import Content from './Content';
-import './App.css';
-import './PostCard.css';
-import PostCard from './PostCard';
-import ProfileImage from './f1fan.jpg';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import Content from "./Content";
+import Jobs from "./Jobs";
+import "./App.css";
+import "./PostCard.css";
+import PostCard from "./PostCard";
+import ProfileImage from "./f1fan.jpg";
 
 function App() {
   const [Posts, setPosts] = useState([]);
-  const [newPost, setNewPost] = useState('');
+  const [newPost, setNewPost] = useState("");
 
   const handlePostSubmit = () => {
     if (newPost) {
       setPosts([...Posts, newPost]);
-      setNewPost('');
+      setNewPost("");
     }
   };
 
@@ -27,20 +28,38 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/content">Content Page (You can click here)</Link>
+              <Link to="/content">Content</Link>
+            </li>
+            <li>
+              <Link to="/jobs">Jobs</Link>
             </li>
           </ul>
         </nav>
         <div className="left-sidebar">
           <div className="profile-info">
-            <img src="your-profile-image.jpg" alt="Your Profile" className="profile-image" />
+            <img
+              src="your-profile-image.jpg"
+              alt="Your Profile"
+              className="profile-image"
+            />
             <h2>Your Name</h2>
             <p>@yourusername</p>
           </div>
         </div>
         <Routes>
-          <Route path="/" element={<AppContent Posts={Posts} newPost={newPost} setNewPost={setNewPost} handlePostSubmit={handlePostSubmit} />} />
+          <Route
+            path="/"
+            element={
+              <AppContent
+                Posts={Posts}
+                newPost={newPost}
+                setNewPost={setNewPost}
+                handlePostSubmit={handlePostSubmit}
+              />
+            }
+          />
           <Route path="/content" element={<Content />} />
+          <Route path="/jobs" element={<Jobs />} />
         </Routes>
         <div className="right-sidebar">
           <div className="search">
