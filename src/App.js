@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import {
+  ThemeProvider,
+  createMuiTheme,
+  makeStyles,
+} from "@material-ui/core/styles";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import Content from "./Content";
 import Jobs from "./Jobs";
@@ -6,107 +11,62 @@ import "./App.css";
 import "./PostCard.css";
 import PostCard from "./PostCard";
 import ProfileImage from "./f1fan.jpg";
+import { Grid } from "@material-ui/core";
+import Sidebar from "./Sidebar";
+import Container from "@mui/material/Container";
+import PostFeed from "./PostFeed";
+import RightBar from "./RightBar";
+import { BrowserRouter as Switch } from "react-router-dom";
 
 function App() {
-  const [Posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState("");
 
   const handlePostSubmit = () => {
     if (newPost) {
-      setPosts([...Posts, newPost]);
+      setPosts([...posts, newPost]);
       setNewPost("");
     }
   };
 
   return (
     <Router>
-      <div className="app-container">
-        <nav className="header">
-          <h1>Poster</h1>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/content">Content</Link>
-            </li>
-            <li>
-              <Link to="/jobs">Jobs</Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="left-sidebar">
-          <div className="profile-info">
-            <img
-              src="your-profile-image.jpg"
-              alt="Your Profile"
-              className="profile-image"
-            />
-            <h2>Your Name</h2>
-            <p>@yourusername</p>
-          </div>
-        </div>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <AppContent
-                Posts={Posts}
-                newPost={newPost}
-                setNewPost={setNewPost}
-                handlePostSubmit={handlePostSubmit}
+      <Container
+        maxWidth="xl"
+        sx={{
+          border: 1,
+          borderColor: "grey.500",
+          backgroundColor: "#4B4645",
+          pt: 4,
+        }}
+      >
+        <Grid container spacing={2}>
+          <Grid item xs={3} sx={{ border: 1, borderColor: "grey.500" }}>
+            <Sidebar />
+          </Grid>
+          <Grid item xs={6} sx={{ border: 1, borderColor: "grey.500" }}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <PostFeed
+                    posts={posts}
+                    newPost={newPost}
+                    setNewPost={setNewPost}
+                    handlePostSubmit={handlePostSubmit}
+                  />
+                }
               />
-            }
-          />
-          <Route path="/content" element={<Content />} />
-          <Route path="/jobs" element={<Jobs />} />
-        </Routes>
-        <div className="right-sidebar">
-          <div className="search">
-            <input type="text" placeholder="Search Twitter" />
-          </div>
-          <div className="trending">
-            <h2>Trending</h2>
-            <ul>
-              <li>#Topic1</li>
-              <li>#Topic2</li>
-              <li>#Topic3</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+              <Route path="/content" element={<Content />} />
+              <Route path="/jobs" element={<Jobs />} />
+            </Routes>
+          </Grid>
+          <Grid item xs={3}>
+            <RightBar />
+          </Grid>
+        </Grid>
+      </Container>
     </Router>
-  );
-}
-
-function AppContent({ Posts, newPost, setNewPost, handlePostSubmit }) {
-  return (
-    <div className="main-content">
-      <div className="Post-box">
-        <img src={ProfileImage} alt="Your Profile" className="profile-image" />
-        <textarea
-          rows="4"
-          cols="50"
-          placeholder="What's happening?"
-          value={newPost}
-          onChange={(e) => setNewPost(e.target.value)}
-        />
-        <button onClick={handlePostSubmit}>Post</button>
-      </div>
-      <div>
-        <h2>Posts</h2>
-        <ul>
-          {Posts.map((Post, index) => (
-            <PostCard
-              key={index}
-              name="F1 Fan 2001 @f1fanuser1"
-              profileImage={ProfileImage}
-              PostText={Post}
-            />
-          ))}
-        </ul>
-      </div>
-    </div>
   );
 }
 

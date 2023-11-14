@@ -1,4 +1,7 @@
 import React from "react";
+import Avatar from "@mui/material/Avatar";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 function TeamJob({ logo, url, teamName }) {
   const handleClick = () => {
@@ -6,10 +9,17 @@ function TeamJob({ logo, url, teamName }) {
   };
 
   return (
-    <div onClick={handleClick}>
-      <img src={logo} alt={`${teamName} logo`} width="25" height="25" />
-      <p>{teamName}</p>
-    </div>
+    <Box
+      onClick={handleClick}
+      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <Avatar
+        src={logo}
+        alt={`${teamName} logo`}
+        sx={{ width: 50, height: 50, border: "1px solid black" }}
+      />
+      <Typography variant="body1">{teamName}</Typography>
+    </Box>
   );
 }
 

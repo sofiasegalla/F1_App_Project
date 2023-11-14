@@ -10,6 +10,7 @@ import ferrariLogo from "./team_logos/ferrarilogo.png";
 import tauriLogo from "./team_logos/AlphaTauri F1 Logo.png";
 import mclarenLogo from "./team_logos/maclaren-logo.png";
 import redbullLogo from "./team_logos/Red Bull Racing Logo.jpg";
+import Grid from "@mui/material/Grid";
 
 function JobGrid() {
   const teamJobs = [
@@ -66,30 +67,17 @@ function JobGrid() {
   ];
 
   return (
-    <div className="job-grid">
-      <div className="row">
-        {teamJobs.slice(0, 5).map((teamJob) => (
-          <div className="col-2">
-            <TeamJob
-              logo={teamJob.logo}
-              url={teamJob.url}
-              teamName={teamJob.name}
-            />
-          </div>
-        ))}
-      </div>
-      <div className="row">
-        {teamJobs.slice(5).map((teamJob) => (
-          <div className="col-2">
-            <TeamJob
-              logo={teamJob.logo}
-              url={teamJob.url}
-              teamName={teamJob.name}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+    <Grid container spacing={2} sx={{ pt: 5 }}>
+      {teamJobs.map((teamJob) => (
+        <Grid item xs={12} sm={6} md={3}>
+          <TeamJob
+            logo={teamJob.logo}
+            url={teamJob.url}
+            teamName={teamJob.name}
+          />
+        </Grid>
+      ))}
+    </Grid>
   );
 }
 

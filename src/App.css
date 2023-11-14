@@ -9,14 +9,14 @@
 .app-container {
   display: flex;
   justify-content: space-between;
-  background-color: #413B39;
-  color: #FFF9E8;
+  background-color: #413b39;
+  color: #fff9e8;
   min-height: 100vh;
 }
 
 /* Header styles */
 .header {
-  background-color: #FF4545;
+  background-color: #ff4545;
   color: white;
   padding: 10px;
 }
@@ -69,8 +69,8 @@
   padding: 10px;
   border: none;
   border-radius: 25px;
-  background-color: #68605F;
-  color: #FFF9E8;
+  background-color: #68605f;
+  color: #fff9e8;
   font-size: 14px;
   outline: none;
 }
@@ -126,7 +126,7 @@ textarea {
 }
 
 button {
-  background-color: #FF4545;
+  background-color: #ff4545;
   color: white;
   border: none;
   border-radius: 25px;
