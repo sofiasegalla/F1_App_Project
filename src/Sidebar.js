@@ -1,25 +1,33 @@
 import React from "react";
-import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
+import { Box, Typography, List, ListItem, ListItemText, Grid, Link} from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import HomeIcon from "@mui/icons-material/Home";
 import ArticleIcon from "@mui/icons-material/Article";
 import WorkIcon from "@mui/icons-material/Work";
 import ProfileImage from "./f1fan.jpg";
+import logo from "./logo.png";
+
 
 const Sidebar = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#333",
+        backgroundColor: "#4B4645",
         color: "#fff",
         height: "100vh",
         width: "300px", // Adjust the width
         position: "fixed",
         top: 0,
-        left: 100,
+        left: 0,
         padding: "60px",
       }}
     >
+      <Grid item>
+          <Link href="">
+            <img src={logo} alt="Page 1" width="150" />
+          </Link>
+        </Grid>
+
       <Avatar
         alt="Chad Sobies"
         src={ProfileImage}

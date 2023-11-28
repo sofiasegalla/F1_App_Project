@@ -48,7 +48,7 @@ const PostCard = ({ name, profileImage, PostText }) => {
             }}
           >
             {liked ? (
-              <Favorite style={{ color: "#FFF9E8", fontSize: "1rem" }} />
+              <Favorite style={{ color: "#FF4545", fontSize: "1rem" }} />
             ) : (
               <FavoriteBorder style={{ color: "#FFF9E8", fontSize: "1rem" }} />
             )}

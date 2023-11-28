@@ -7,9 +7,10 @@ import Sidebar from "./Sidebar";
 import Container from "@mui/material/Container";
 import PostFeed from "./PostFeed";
 import RightBar from "./RightBar";
-import TopBar from "./TopBar";
 import Content from "./Content";
 import Jobs from "./Jobs";
+
+import TopBar from "./TopBar";
 
 function App() {
   const [posts, setPosts] = useState([]);

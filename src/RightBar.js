@@ -21,7 +21,8 @@ function RightBar() {
             "& fieldset": {
               borderRadius: 50,
               borderWidth: 1,
-              borderColor: "#FFF9E8",
+              //borderColor: "#FFF9E8",
+              backgroundColor: "#68605F",
               opacity: 0.6,
             },
             height: 40,

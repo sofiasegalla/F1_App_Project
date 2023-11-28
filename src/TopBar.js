@@ -20,7 +20,9 @@ function TopBar() {
           </Link>
         </Grid>
         <Grid item>
+          <Link href="/">
             <img src={photo1} alt="Page 2" width="350" />
+          </Link>
         </Grid>
         {/* Add more Grid items for additional links/photos */}
       </Grid>
