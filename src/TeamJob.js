@@ -1,26 +1,22 @@
-import React from "react";
-import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Jobs.css'; // Import the CSS file
 
-function TeamJob({ logo, url, teamName }) {
-  const handleClick = () => {
-    window.open(url, "_blank");
-  };
+const TeamJob = ({ logo, url, teamName }) => (
+  <div className="team-job-item">
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <div className="team-job-content">
+        <img src={logo} alt={teamName} />
+        <p style={{ color: 'white' }}>{teamName}</p>
+      </div>
+    </a>
+  </div>
+);
 
-  return (
-    <Box
-      onClick={handleClick}
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <Avatar
-        src={logo}
-        alt={`${teamName} logo`}
-        sx={{ width: 50, height: 50, border: "1px solid black" }}
-      />
-      <Typography variant="body1">{teamName}</Typography>
-    </Box>
-  );
-}
+TeamJob.propTypes = {
+  logo: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  teamName: PropTypes.string.isRequired,
+};
 
 export default TeamJob;

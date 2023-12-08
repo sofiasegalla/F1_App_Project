@@ -9,7 +9,6 @@ import PostFeed from "./PostFeed";
 import RightBar from "./RightBar";
 import Content from "./Content";
 import Jobs from "./Jobs";
-
 import TopBar from "./TopBar";
 
 function App() {

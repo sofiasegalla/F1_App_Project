@@ -1,0 +1,80 @@
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two videos per row */
+  gap: 20px; /* Adjust the gap between videos as needed */
+}
+
+.video {
+  color: white;
+  background-color: #333; /* Background color for the video box */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.video img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.video a {
+  text-decoration: none;
+  color: white; /* Link color */
+}
+
+.video a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.posted-by {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+  color: #ccc; /* Color for 'posted by' information */
+}
+
+/* Add this CSS to your Content.css file */
+
+.bubble-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.countdown-button {
+  padding: 10px 20px; /* Add padding to the button */
+  font-size: 16px; /* Increase font size if needed */
+  border-radius: 5px;
+  border: none;
+  background-color: #FF4545; /* Change button background color */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+
+/* Updated CSS for the Trending in F1 title */
+
+/* Updated CSS for the Trending in F1 title */
+
+/* Updated CSS for the Trending in F1 title */
+
+h2 {
+  font-size: 24px; /* Increase font size for the title */
+  text-align: center; /* Center-align the title */
+  margin-bottom: 20px; /* Add margin at the bottom */
+  position: relative; /* Set position to relative for pseudo-element */
+}
+
+h2::after {
+  content: ''; /* Create a pseudo-element */
+  display: block;
+  width: 100%; /* Full width of the line */
+  height: 1px; /* Height of the line */
+  background-color: #FFF9E8; /* Line color */
+  position: absolute;
+  bottom: -5px; /* Position the line below the title */
+  left: 0; /* Align the line to the left */
+}
+
+

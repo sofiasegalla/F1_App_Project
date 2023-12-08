@@ -44,17 +44,17 @@ function RightBar() {
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: "5px" }}>
               <Typography variant="body1" sx={{ color: "#FFF9E8" }}>
-                #Topic1
+                #MexicoGP
               </Typography>
             </li>
             <li style={{ marginBottom: "5px" }}>
               <Typography variant="body1" sx={{ color: "#FFF9E8" }}>
-                #Topic2
+                #RedBull
               </Typography>
             </li>
             <li style={{ marginBottom: "5px" }}>
               <Typography variant="body1" sx={{ color: "#FFF9E8" }}>
-                #Topic3
+                #Perez
               </Typography>
             </li>
             <li style={{ marginBottom: "5px" }}>

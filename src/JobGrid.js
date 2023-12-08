@@ -1,3 +1,4 @@
+
 import React from "react";
 import TeamJob from "./TeamJob";
 import alpinelogo from "./team_logos/alpinepng.png";
@@ -18,6 +19,7 @@ function JobGrid() {
       logo: redbullLogo,
       url: "https://www.redbullracing.com/int-en/jobs",
       name: "Red Bull",
+      style: { color: 'white' },
     },
     {
       logo: mercedezLogo,
@@ -67,17 +69,16 @@ function JobGrid() {
   ];
 
   return (
-    <Grid container spacing={2} sx={{ pt: 5 }}>
+    <div className="team-job">
       {teamJobs.map((teamJob) => (
-        <Grid item xs={12} sm={6} md={3}>
-          <TeamJob
-            logo={teamJob.logo}
-            url={teamJob.url}
-            teamName={teamJob.name}
-          />
-        </Grid>
+        <TeamJob
+          key={teamJob.name}
+          logo={teamJob.logo}
+          url={teamJob.url}
+          teamName={teamJob.name}
+        />
       ))}
-    </Grid>
+    </div>
   );
 }
 
