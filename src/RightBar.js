@@ -1,5 +1,7 @@
 import React from "react";
 import { Box, TextField, Typography, Stack, Divider } from "@mui/material";
+import FiltersComponent from "./FiltersComponent";
+import { Filter } from "@mui/icons-material";
 
 function RightBar() {
   return (
@@ -29,7 +31,8 @@ function RightBar() {
             marginBottom: "20px", // Add margin bottom for spacing
           }}
         />
-        <Divider sx={{ backgroundColor: "transparent", height: "10px" }} /> {/* Add a divider with height */}
+        <Divider sx={{ backgroundColor: "transparent", height: "10px" }} />{" "}
+        {/* Add a divider with height */}
         <Box
           sx={{
             border: "1px solid #4B4645",
@@ -38,10 +41,13 @@ function RightBar() {
             backgroundColor: "#4B4645", // Change background color
           }}
         >
-          <Typography variant="h6" sx={{ color: "#FFF9E8", marginBottom: "10px", fontWeight: "bold"}}>
+          <Typography
+            variant="h6"
+            sx={{ color: "#FFF9E8", marginBottom: "10px", fontWeight: "bold" }}
+          >
             Trending
           </Typography>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
+          <ul style={{ listStyle: "none", padding: 0 }}>
             <li style={{ marginBottom: "5px" }}>
               <Typography variant="body1" sx={{ color: "#FFF9E8" }}>
                 #MexicoGP
@@ -64,6 +70,7 @@ function RightBar() {
             </li>
           </ul>
         </Box>
+        <FiltersComponent />
       </Stack>
     </Box>
   );
